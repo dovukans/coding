@@ -22,11 +22,15 @@ These are the scripts I actually use in production environments.
 
 ## 📁 Structure
 
-scripting/
-├── coding/
-│   ├── 
-│   ├── disable_root_login.sh
-│   └── firewall_hardening.sh
+├── linux/
+│   ├── ...
+│   ├── ...
+│   └── ...
+
+├── windows/
+│   ├── ...
+│   ├── ...
+│   └── ...
 
 ## ⚠️ Disclaimer
 
