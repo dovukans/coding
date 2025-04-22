@@ -49,6 +49,8 @@ These are the scripts I actually use in production environments.
 
 These scripts modify system configs — NEVER TEST IN PRODUCTION, EVER. YES I AM LOOKING AT YOU, BRAVE SOLDIER. DON'T DO IT.
 
-📬 Want to suggest something?
+## 📬 Want to suggest something?
 
 Open an issue.
+
+Bon appétit!
