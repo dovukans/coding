@@ -52,11 +52,6 @@ These scripts modify system configs — NEVER TEST IN PRODUCTION, EVER. YES I AM
 ## 📬 Want to suggest something?
 
 Open an issue.
+<br><br>
 
-
- 
-  
-   
-    
-   
 >  🍽️ **Bon appétit!** 
