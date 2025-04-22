@@ -56,3 +56,4 @@ Open an issue.
 > 🍽️ Bon appétit!  
 > May your servers stay patched and your logs stay quiet.
 
+![Bon appétit!](https://img.shields.io/badge/Bon_Appétit%20🍽️-Script_Safely-informational)
