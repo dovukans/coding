@@ -1,0 +1,24 @@
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code settings folder
+.vscode/
+
+# VS Code extension debugging logs
+*.code-workspace
+.vscode-test/
+
+# Editor temporary/backup files
+*.swp
+*.swo
+*~
+
+# PowerShell logs or temp files (if any are generated)
+*.log
+*.ps1xml
+*.pssc
