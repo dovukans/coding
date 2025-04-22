@@ -20,7 +20,8 @@ So instead of fixing the same 10 things on 10 servers, I decided to script once,
 
 These are the scripts I actually use in production environments.
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
+
 These scripts modify system configs — NEVER TEST IN PRODUCTION, EVER. YES I AM LOOKING AT YOU, BRAVE SOLDIER. DON'T DO IT.
 
 📬 Want to suggest something?
