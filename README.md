@@ -3,7 +3,7 @@
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnu-bash&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-0078D7?logo=powershell&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=yellow)
-![Ansible](https://img.shields.io/badge/ansible-000000?&logo=Ansible&logoColor=ff0000)
+![Ansible](https://img.shields.io/badge/Ansible-000000?&logo=Ansible&logoColor=ff0000)
 ![RedHat](https://img.shields.io/badge/RedHat-EE0000?logo=redhat&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
