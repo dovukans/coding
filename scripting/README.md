@@ -22,7 +22,7 @@ These are the scripts I actually use in production environments.
 
 ## 📁 Structure
 
-scripting/
+<pre> \`\`\` scripting/
 ├── linux/
 │   ├── ...
 │   ├── ...
@@ -31,7 +31,7 @@ scripting/
 │   ├── ...
 │   ├── ...
 │   └── ...
-
+\`\`\` </pre>
 
 ## ⚠️ Disclaimer
 
