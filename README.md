@@ -1,12 +1,10 @@
 # 🧰 Sysadmin Script Toolbox
 
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnu-bash&logoColor=white)
-![PowerShell](https://img.shields.io/badge/PowerShell-0078D7?logo=powershell&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-0078D7?logo=powershell&logoColor=white&style=for-the-badge)
 ![RedHat](https://img.shields.io/badge/RedHat-EE0000?logo=redhat&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Languages](https://img.shields.io/github/languages/top/dovukans/coding)
-
 
 
 
