@@ -4,13 +4,13 @@ Scripts for common configuration hardening & vulnerability mitigation tasks, wri
 
 This repo contains small, purpose-built Bash and PowerShell scripts that:
 
-Automate common system hardening steps
+-Automate common system hardening steps
 
-Echo what changes are being made for clarity
+-Echo what changes are being made for clarity
 
-Use dynamic values when possible (no hardcoded paths or users)
+-Use dynamic values when possible (no hardcoded paths or users)
 
-Work on systems where you usually have to dig through manuals or Stack Overflow
+-Work on systems where you usually have to dig through manuals or Stack Overflow
 
 
 ## 💡 Why I made this
@@ -21,7 +21,7 @@ So instead of fixing the same 10 things on 10 servers, I decided to script once,
 These are the scripts I actually use in production environments.
 
 ⚠️ Disclaimer
-These scripts modify system configs — NEVER TEST IN PRODUCTION EVER.
+These scripts modify system configs — NEVER TEST IN PRODUCTION, EVER. YES I AM LOOKING AT YOU, BRAVE SOLDIER. DON'T DO IT.
 
 📬 Want to suggest something?
 Open an issue or just fork and go wild.
