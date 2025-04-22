@@ -22,7 +22,7 @@ These are the scripts I actually use in production environments.
 
 ## 📁 Structure
 
-<pre> scripting/
+<pre>scripting/
 ├── linux/
 │   ├── ...
 │   ├── ...
