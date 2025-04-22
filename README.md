@@ -1,25 +1,18 @@
-Scripts for common configuration hardening & vulnerability mitigation tasks, written to save time and reduce human error in daily sysadmin tasks.
+# Coding
 
-🔧 What's in here
-This repo contains small, purpose-built Bash and PowerShell scripts that:
+This section contains various coding artifacts related to system administration, automation, and scripting.
 
-Automate common system hardening steps
+## Structure
 
-Echo what changes are being made for clarity
+- `scripting/`  
+  Scripts for automating repetitive tasks — especially those related to vulnerability fixes, config hardening, etc.  
+  ✅ Ideal for anyone tired of editing conf files manually.
 
-Use dynamic values when possible (no hardcoded paths or users)
+## Purpose
 
-Work on systems where you usually have to dig through manuals or Stack Overflow
+The goal here is to gather, document, and share practical, real-world scripts and code snippets that can make sysadmins' lives easier.
 
-💡 Why I made this
-As a sysadmin, I found myself repeating the same manual configuration edits across different Linux distros and Windows servers.
-So instead of fixing the same 10 things on 10 servers, I decided to script once, apply many — and share what I use.
+All scripts are written with clarity, reusability, and echo-friendly verbosity.
 
-These are the scripts I actually use in production environments.
-Sometimes they're minimal, sometimes verbose — but always practical.
+## Coming Stuff Soon
 
-⚠️ Disclaimer
-These scripts modify system configs — test in a lab before deploying in production.
-
-📬 Want to suggest something?
-Open an issue or just fork and go wild.
