@@ -7,8 +7,7 @@
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white)
 
 
-Scripts for common configuration hardening and vulnerability mitigation tasks,  
-**plus automation tools to save time and reduce human error in daily sysadmin work, because why not?.**
+Scripts for common configuration hardening and vulnerability mitigation tasks, plus automation tools to save time and reduce human error in daily sysadmin work, because why not?
 
 ## 🔧 What's in here?
 
