@@ -53,9 +53,6 @@ These scripts modify system configs — NEVER TEST IN PRODUCTION, EVER. YES I AM
 
 Open an issue.
 
-<details>
-<summary>🍽️ Bon appétit!</summary>
+> 🍽️ Bon appétit!  
+> May your servers stay patched and your logs stay quiet.
 
-May your servers stay patched and your logs stay quiet.
-
-</details>
