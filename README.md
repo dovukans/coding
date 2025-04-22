@@ -1,9 +1,14 @@
+# 🧰 Sysadmin Script Toolbox
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnu-bash&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-0078D7?logo=powershell&logoColor=white)
+![RedHat](https://img.shields.io/badge/RedHat-EE0000?logo=redhat&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white)
 
 
-### Scripts for common configuration hardening & vulnerability mitigation tasks, written to save time and reduce human error in daily sysadmin tasks.
+Scripts for common configuration hardening and vulnerability mitigation tasks,  
+**plus automation tools to save time and reduce human error in daily sysadmin work, because why not?.**
 
 ## 🔧 What's in here?
 
