@@ -5,7 +5,7 @@
 ![RedHat](https://img.shields.io/badge/RedHat-EE0000?logo=redhat&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Languages](https://img.shields.io/github/languages/top/username/repository)
+![Languages](https://img.shields.io/github/languages/top/dovukans/coding)
 
 
 
