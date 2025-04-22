@@ -13,15 +13,15 @@ Use dynamic values when possible (no hardcoded paths or users)
 Work on systems where you usually have to dig through manuals or Stack Overflow
 
 
-💡 Why I made this
+## 💡 Why I made this
+
 As a sysadmin, I found myself repeating the same manual configuration edits across different Linux distros and Windows servers.
 So instead of fixing the same 10 things on 10 servers, I decided to script once, apply many — and share what I use.
 
 These are the scripts I actually use in production environments.
-Sometimes they're minimal, sometimes verbose — but always practical.
 
 ⚠️ Disclaimer
-These scripts modify system configs — test in a lab before deploying in production.
+These scripts modify system configs — NEVER TEST IN PRODUCTION EVER.
 
 📬 Want to suggest something?
 Open an issue or just fork and go wild.
