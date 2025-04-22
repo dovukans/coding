@@ -1,4 +1,4 @@
-Scripts for common configuration hardening & vulnerability mitigation tasks, written to save time and reduce human error in daily sysadmin tasks.
+# Scripts for common configuration hardening & vulnerability mitigation tasks, written to save time and reduce human error in daily sysadmin tasks.
 
 ## 🔧 What's in here?
 
@@ -25,4 +25,4 @@ These are the scripts I actually use in production environments.
 These scripts modify system configs — NEVER TEST IN PRODUCTION, EVER. YES I AM LOOKING AT YOU, BRAVE SOLDIER. DON'T DO IT.
 
 📬 Want to suggest something?
-Open an issue or just fork and go wild.
+Open an issue.
