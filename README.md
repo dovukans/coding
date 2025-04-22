@@ -1,4 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnu-bash&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-0078D7?logo=powershell&logoColor=white)
 
 
 ### Scripts for common configuration hardening & vulnerability mitigation tasks, written to save time and reduce human error in daily sysadmin tasks.
