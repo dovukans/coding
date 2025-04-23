@@ -4,7 +4,7 @@ A tiny but powerful script to automatically remove SHA1-based algorithms from Op
 
 > **📄 Index**
 >
-> - [openssh_sha1_cleaner.py](./openssh_sha1_cleaner.py) – Main script
+> - [openssh_sha1_cleaner.py](coding/scripting/linux/openssh_sha1_cleaner.py) – Main script
 > - [README](./README.md) – You're here
 
 
