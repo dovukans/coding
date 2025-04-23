@@ -61,7 +61,7 @@ def remove_sha1():
     # Process algorithms
     removed_algorithms = []
     crypto_sections = ('Ciphers', 'MACs', 'KexAlgorithms',
-                     'PubkeyAcceptedAlgorithms', 'CASignatureAlgorithms')
+                     'PubkeyAcceptedAlgorithms', 'CASignatureAlgorithms', 'HostKeyAlgorithms')
     
     output = []
     for line in original.splitlines():
