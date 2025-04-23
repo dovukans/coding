@@ -10,25 +10,36 @@ A tiny but powerful script to automatically remove SHA1-based algorithms from Op
 
 ## ✨ Features
 
-- Detects and removes SHA1 algorithms from key SSH config directives
-- Dry-run support to preview changes safely
-- Silent mode for automated or cron-based execution
-- Automatically creates log files with clean timestamps
-- Creates a backup of the original config before making changes
-- Designed to be plug-and-play on any machine
+- Automated cleanup – Removes SHA1 algorithms from critical SSH configuration directives
+
+- Safety-first design – Creates backups before modifications & supports dry-run previews
+
+- Flexible execution – Silent mode for cron jobs/automation & verbose logging
+
+- Self-contained – Zero external dependencies (just Python 3)
+
+- Audit-ready – Generates timestamped logs of all actions
 
 ## 🖥 Supported Platforms
 
 - Linux
 
-## ✅ Tested On
+- Tested On:
 
-- Red Hat Enterprise Linux 9.5 Server
-- OpenSSH_8.7p1
+    - Red Hat Enterprise Linux 9.5 Server
+    - OpenSSH_8.7p1
 
-## 🛡 Why remove SHA1?
+## 🛡 Security Rationale  
 
-SHA1 is deprecated due to known vulnerabilities and should not be used in cryptographic configurations. This script helps enforce a more secure baseline without manual editing.
+## 🛡 Security Rationale  
+
+ SHA1 is considered **cryptographically broken** since 2017 ([NIST deprecation](https://csrc.nist.gov/Projects/Hash-Functions/NIST-Policy-on-Hash-Functions)). This script helps:  
+
+- Eliminate vulnerable algorithms
+
+- Enforce modern cryptographic baselines
+
+- Avoid manual file editing errors
 
 ## 🔧 Configurable Options
 Inside the script:
@@ -42,4 +53,4 @@ SILENT_MODE: Suppress all terminal output
 LOG_FILE: Output path for logging
 
 ## 🧠 Dev Notes
-The script is standalone, doesn't rely on any external dependencies, and can be dropped into any system where Python 3 is available.
+The script is standalone, doesn't rely on any external dependencies, and can be dropped into any system where Python 3 is available. This script requires root privileges to run. Please execute it as root or with sudo.
