@@ -29,6 +29,18 @@ A tiny but powerful script to automatically remove SHA1-based algorithms from Op
     - Red Hat Enterprise Linux 9.5 Server
     - OpenSSH_8.7p1
 
+## 🖥 Supported Files
+
+This script is designed to safely modify these common OpenSSH crypto-policy files when explicitly targeted:
+
+- `/etc/crypto-policies/back-ends/openssh.config` 
+- `/etc/crypto-policies/back-ends/opensshserver.config` 
+
+How to use:
+
+Set TARGET_FILE in the script to your specific config path
+
+Always test with DRY_RUN=True first.
 
 ## 🛡 Security Rationale  
 
@@ -52,4 +64,4 @@ SILENT_MODE: Suppress all terminal output
 LOG_FILE: Output path for logging
 
 ## 🧠 Dev Notes
-The script is standalone, doesn't rely on any external dependencies, and can be dropped into any system where Python 3 is available. This script requires root privileges to run. Please execute it as root or with sudo.
+The script is standalone, doesn't rely on any external dependencies. It can be dropped into any system where Python 3 is available. This script requires root privileges to run. Please execute it as root or with sudo.
