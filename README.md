@@ -36,7 +36,7 @@ These are the scripts I actually use in production environments.
 
 <pre>scripting/
 ├── linux/
-│   ├── <a href="coding/scripting/linux/openssh_sha1_cleaner.py">openssh_sha1_cleaner.py</a> (<a href="docs/linux/openssh_sha1_cleaner.md">usage</a>) 
+│   ├── <a href="/scripting/linux/openssh_sha1_cleaner.py">openssh_sha1_cleaner.py</a> (<a href="docs/linux/openssh_sha1_cleaner.md">usage</a>) 
 │   ├── ...
 │   └── ...
 ├── windows/
