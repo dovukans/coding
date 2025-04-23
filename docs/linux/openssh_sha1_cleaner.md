@@ -29,7 +29,6 @@ A tiny but powerful script to automatically remove SHA1-based algorithms from Op
     - Red Hat Enterprise Linux 9.5 Server
     - OpenSSH_8.7p1
 
-## 🛡 Security Rationale  
 
 ## 🛡 Security Rationale  
 
