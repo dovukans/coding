@@ -2,6 +2,12 @@
 
 A tiny but powerful script to automatically remove SHA1-based algorithms from OpenSSH crypto policy configs.
 
+> **📄 Index**
+>
+> - [openssh_sha1_cleaner.py](./openssh_sha1_cleaner.py) – Main script
+> - [README](./README.md) – You're here
+
+
 ## ✨ Features
 
 - Detects and removes SHA1 algorithms from key SSH config directives
