@@ -1,5 +1,5 @@
 #!/bin/bash
-# RHEL Web Server Security Hardening Script 
+# RHEL Web Server Security Hardening Script
 # Usage: sudo ./webserver_harden.sh
 
 # ---[ STRICT MODE ]---
@@ -21,28 +21,40 @@ fi
 
 # ---[ DETECT WEB SERVER ]---
 detect_webserver() {
-    if systemctl is-active --quiet httpd; then
+    if systemctl is-active --quiet httpd || systemctl is-active --quiet apache2; then
         WEBSERVER="apache"
-        CONFDIR="/etc/httpd/conf.d"
-        MAINCONF="/etc/httpd/conf/httpd.conf"
         SERVERNAME="Apache"
+        # Detect service name
+        if systemctl is-active --quiet httpd; then
+            SERVICE_NAME="httpd"
+            CONFDIR="/etc/httpd/conf.d"
+            MAINCONF="/etc/httpd/conf/httpd.conf"
+        else
+            SERVICE_NAME="apache2"
+            CONFDIR="/etc/apache2/conf-enabled"
+            MAINCONF="/etc/apache2/apache2.conf"
+        fi
         # Detect SSL config file location
         if [ -f "/etc/httpd/conf.d/ssl.conf" ]; then
             SSLCONF="/etc/httpd/conf.d/ssl.conf"
         elif [ -f "/etc/httpd/conf/httpd-ssl.conf" ]; then
             SSLCONF="/etc/httpd/conf/httpd-ssl.conf"
+        elif [ -f "/etc/apache2/sites-available/default-ssl.conf" ]; then
+            SSLCONF="/etc/apache2/sites-available/default-ssl.conf"
         else
             echo "[!] No SSL configuration found for Apache"
             SSLCONF=""
         fi
     elif systemctl is-active --quiet nginx; then
         WEBSERVER="nginx"
+        SERVICE_NAME="nginx"
         CONFDIR="/etc/nginx/conf.d"
         MAINCONF="/etc/nginx/nginx.conf"
         SERVERNAME="Nginx"
         SSLCONF="$MAINCONF"
     elif systemctl is-active --quiet lighttpd; then
         WEBSERVER="lighttpd"
+        SERVICE_NAME="lighttpd"
         CONFDIR="/etc/lighttpd"
         MAINCONF="/etc/lighttpd/lighttpd.conf"
         SERVERNAME="Lighttpd"
@@ -51,7 +63,7 @@ detect_webserver() {
         echo "[-] No active web server detected. Exiting."
         exit 1
     fi
-    echo "[+] Detected running server: $SERVERNAME"
+    echo "[+] Detected running server: $SERVERNAME (service: $SERVICE_NAME)"
 }
 
 # ---[ BACKUP CONFIG ]---
@@ -73,14 +85,14 @@ harden_apache() {
     # TLS/SSL Hardening (only if SSL config exists)
     if [ -n "$SSLCONF" ] && [ -f "$SSLCONF" ]; then
         echo "[+] Applying TLS hardening to $SSLCONF"
-        sed -i 's/SSLProtocol all -SSLv3/SSLProtocol TLSv1.2 TLSv1.3/g' "$SSLCONF"
-        sed -i 's/SSLCipherSuite HIGH:!aNULL:!MD5/SSLCipherSuite ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256/g' "$SSLCONF"
+        sed -i 's/SSLProtocol all -SSLv3/SSLProtocol TLSv1.2 TLSv1.3/g' "$SSLCONF" 2>/dev/null || echo "[!] Could not modify SSLProtocol in $SSLCONF"
+        sed -i 's/SSLCipherSuite HIGH:!aNULL:!MD5/SSLCipherSuite ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256/g' "$SSLCONF" 2>/dev/null || echo "[!] Could not modify SSLCipherSuite in $SSLCONF"
     else
         echo "[!] No SSL configuration found - skipping TLS hardening"
     fi
 
     # Basic Security
-    sed -i 's/Options Indexes FollowSymLinks/Options -Indexes +FollowSymLinks/g' "$MAINCONF"
+    sed -i 's/Options Indexes FollowSymLinks/Options -Indexes +FollowSymLinks/g' "$MAINCONF" 2>/dev/null || echo "[!] Could not modify Options in $MAINCONF"
     grep -qxF 'ServerTokens Prod' "$MAINCONF" || echo 'ServerTokens Prod' >> "$MAINCONF"
     grep -qxF 'ServerSignature Off' "$MAINCONF" || echo 'ServerSignature Off' >> "$MAINCONF"
     grep -qxF 'TraceEnable off' "$MAINCONF" || echo 'TraceEnable off' >> "$MAINCONF"
@@ -105,6 +117,7 @@ harden_apache() {
 
     # Cleanup
     [ -d "/usr/share/httpd/noindex" ] && rm -rf /usr/share/httpd/noindex/*
+    [ -d "/var/www/html" ] && find /var/www/html -type d -exec chmod 750 {} \; && find /var/www/html -type f -exec chmod 640 {} \;
 
     # SELinux Hardening
     if sestatus | grep -q "SELinux status: disabled"; then
@@ -120,9 +133,9 @@ harden_nginx() {
     echo "[+] Hardening Nginx..."
     
     # TLS/SSL Hardening
-    sed -i 's/ssl_protocols TLSv1 TLSv1.1 TLSv1.2;/ssl_protocols TLSv1.2 TLSv1.3;/g' "$MAINCONF"
-    sed -i 's/ssl_prefer_server_ciphers off;/ssl_prefer_server_ciphers on;/g' "$MAINCONF"
-    sed -i 's/# ssl_ciphers/ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256/g' "$MAINCONF"
+    sed -i 's/ssl_protocols TLSv1 TLSv1.1 TLSv1.2;/ssl_protocols TLSv1.2 TLSv1.3;/g' "$MAINCONF" 2>/dev/null || echo "[!] Could not modify ssl_protocols in $MAINCONF"
+    sed -i 's/ssl_prefer_server_ciphers off;/ssl_prefer_server_ciphers on;/g' "$MAINCONF" 2>/dev/null || echo "[!] Could not modify ssl_prefer_server_ciphers in $MAINCONF"
+    sed -i 's/# ssl_ciphers/ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256/g' "$MAINCONF" 2>/dev/null || echo "[!] Could not modify ssl_ciphers in $MAINCONF"
 
     # Basic Security
     grep -qxF 'server_tokens off;' "$MAINCONF" || echo 'server_tokens off;' >> "$MAINCONF"
@@ -144,6 +157,9 @@ harden_nginx() {
     grep -qxF 'add_header X-Content-Type-Options nosniff;' "$MAINCONF" || echo 'add_header X-Content-Type-Options nosniff;' >> "$MAINCONF"
     grep -qxF 'add_header X-Frame-Options SAMEORIGIN;' "$MAINCONF" || echo 'add_header X-Frame-Options SAMEORIGIN;' >> "$MAINCONF"
 
+    # File permissions
+    [ -d "/usr/share/nginx/html" ] && find /usr/share/nginx/html -type d -exec chmod 750 {} \; && find /usr/share/nginx/html -type f -exec chmod 640 {} \;
+
     # SELinux Hardening
     if sestatus | grep -q "SELinux status: disabled"; then
         echo "[-] SELinux is disabled, skipping SELinux hardening."
@@ -157,13 +173,16 @@ harden_lighttpd() {
     echo "[+] Hardening Lighttpd..."
     
     # TLS/SSL Hardening
-    sed -i 's/ssl.use-sslv2 = \"enable\"/ssl.use-sslv2 = \"disable\"/g' "$MAINCONF"
-    sed -i 's/ssl.use-sslv3 = \"enable\"/ssl.use-sslv3 = \"disable\"/g' "$MAINCONF"
+    sed -i 's/ssl.use-sslv2 = \"enable\"/ssl.use-sslv2 = \"disable\"/g' "$MAINCONF" 2>/dev/null || echo "[!] Could not disable SSLv2 in $MAINCONF"
+    sed -i 's/ssl.use-sslv3 = \"enable\"/ssl.use-sslv3 = \"disable\"/g' "$MAINCONF" 2>/dev/null || echo "[!] Could not disable SSLv3 in $MAINCONF"
     grep -qxF 'ssl.openssl.ssl-conf-cmd = ("Protocol" => "TLSv1.2, TLSv1.3")' "$MAINCONF" || echo 'ssl.openssl.ssl-conf-cmd = ("Protocol" => "TLSv1.2, TLSv1.3")' >> "$MAINCONF"
 
     # Basic Security
-    sed -i 's/dir-listing.activate = \"enable\"/dir-listing.activate = \"disable\"/g' "$MAINCONF"
+    sed -i 's/dir-listing.activate = \"enable\"/dir-listing.activate = \"disable\"/g' "$MAINCONF" 2>/dev/null || echo "[!] Could not disable directory listing in $MAINCONF"
     grep -qxF 'server.tag = "Secure Server"' "$MAINCONF" || echo 'server.tag = "Secure Server"' >> "$MAINCONF"
+
+    # File permissions
+    [ -d "/var/www/html" ] && find /var/www/html -type d -exec chmod 750 {} \; && find /var/www/html -type f -exec chmod 640 {} \;
 
     # SELinux Hardening
     if sestatus | grep -q "SELinux status: disabled"; then
@@ -179,16 +198,15 @@ verify_hardening() {
     echo "[+] Verifying hardening..."
     case $WEBSERVER in
         "apache" | "nginx")
-            response_code=$(curl -I localhost 2>/dev/null | head -n 1 | awk '{print $2}')
+            response_code=$(curl -sI localhost | head -n 1 | awk '{print $2}')
             if [ "$response_code" != "200" ]; then
-                echo "[-] HTTP response code is not 200. Something went wrong."
-                exit 1
+                echo "[-] HTTP response code is $response_code (expected 200). Something may be wrong."
             fi
-            curl -I localhost | grep -q "Strict-Transport-Security" || echo "[-] HSTS header missing!"
-            curl -I localhost | grep -q "Content-Security-Policy" || echo "[-] CSP header missing!"
+            curl -sI localhost | grep -q "Strict-Transport-Security" || echo "[-] HSTS header missing!"
+            curl -sI localhost | grep -q "Content-Security-Policy" || echo "[-] CSP header missing!"
             ;;
         "lighttpd")
-            curl -I localhost | grep -q "Server: Secure Server" || echo "[-] Server tag not hidden!"
+            curl -sI localhost | grep -q "Server: Secure Server" || echo "[-] Server tag not hidden!"
             ;;
     esac
     echo "[+] Hardening verification complete."
@@ -208,49 +226,38 @@ esac
 # ---[ VALIDATE CONFIG ]---
 echo "[+] Validating $SERVERNAME configuration..."
 case $WEBSERVER in
-    "apache") apachectl configtest || { echo "[-] Apache config test failed!"; exit 1; } ;;
+    "apache")
+        if ! $SERVICE_NAME -t; then
+            echo "[-] Apache config test failed!"
+            exit 1
+        fi
+        ;;
     "nginx") nginx -t || { echo "[-] Nginx config test failed!"; exit 1; } ;;
     "lighttpd") lighttpd -t -f /etc/lighttpd/lighttpd.conf || { echo "[-] Lighttpd config test failed!"; exit 1; } ;;
 esac
 
 # ---[ RESTART SERVICE ]---
-echo "[+] Restarting $SERVERNAME..."
-case $WEBSERVER in
-    "apache")
-        if systemctl is-active --quiet httpd; then
-            systemctl restart httpd || { echo "[-] Failed to restart httpd!"; exit 1; }
-        elif systemctl is-active --quiet apache2; then
-            systemctl restart apache2 || { echo "[-] Failed to restart apache2!"; exit 1; }
-        else
-            echo "[-] Could not determine Apache service name (tried httpd and apache2)"
-            exit 1
-        fi
-        ;;
-    "nginx")
-        systemctl restart nginx || { echo "[-] Failed to restart nginx!"; exit 1; }
-        ;;
-    "lighttpd")
-        systemctl restart lighttpd || { echo "[-] Failed to restart lighttpd!"; exit 1; }
-        ;;
-esac
+echo "[+] Restarting $SERVERNAME ($SERVICE_NAME)..."
+if ! systemctl restart "$SERVICE_NAME"; then
+    echo "[-] Failed to restart $SERVICE_NAME!"
+    exit 1
+fi
 
 # ---[ Verify service is running ]---
 echo "[+] Verifying $SERVERNAME is running..."
-case $WEBSERVER in
-    "apache")
-        if systemctl is-active --quiet httpd || systemctl is-active --quiet apache2; then
-            echo "[+] $SERVERNAME is running"
-        else
-            echo "[-] $SERVERNAME failed to start!"
-            exit 1
-        fi
-        ;;
-    *)
-        if systemctl is-active --quiet $WEBSERVER; then
-            echo "[+] $SERVERNAME is running"
-        else
-            echo "[-] $SERVERNAME failed to start!"
-            exit 1
-        fi
-        ;;
-esac
+if ! systemctl is-active --quiet "$SERVICE_NAME"; then
+    echo "[-] $SERVICE_NAME failed to start!"
+    exit 1
+fi
+echo "[+] $SERVERNAME is running successfully"
+
+verify_hardening
+
+echo -e "\n[+] HARDENING COMPLETE. SERVER IS SECURE."
+echo "[!] IMPORTANT NEXT STEPS:"
+echo "    1. Test all website functionality"
+echo "    2. Check browser console for any Content Security Policy violations"
+echo "    3. Monitor logs for any issues at:"
+echo "       - General logs: $LOGFILE"
+echo "       - Error logs: $ERRORLOG"
+echo "       - Web server logs: /var/log/$SERVICE_NAME/*"
