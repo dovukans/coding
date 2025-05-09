@@ -1,4 +1,4 @@
- # OpenSSH SHA1 Cleaner 🔐
+ # OpenSSH SHA1 Cleaner 
 
 A tiny but powerful script to automatically remove SHA1-based algorithms from OpenSSH crypto policy configs.
 
