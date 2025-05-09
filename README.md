@@ -14,15 +14,15 @@ Scripts for common configuration hardening and vulnerability mitigation tasks, p
 
 ## 🔧 What's in here?
 
-This repo contains small, purpose-built Bash and PowerShell scripts that:
+This repo contains small, purpose-built Bash, Python and PowerShell scripts that:
 
--Automate common system hardening steps
+- Automate common system hardening steps
 
--Echo what changes are being made for clarity
+- Echo what changes are being made for clarity
 
--Use dynamic values when possible (no hardcoded paths or users)
+- Use dynamic values when possible (no hardcoded paths or users)
 
--Work on systems where you usually have to dig through manuals or Stack Overflow
+- Work on systems where you usually have to dig through manuals or Stack Overflow
 
 
 ## 💡 Why I made this
@@ -36,8 +36,8 @@ These are the scripts I actually use in production environments.
 
 <pre>scripting/
 ├── linux/
-│   ├── <a href="/scripting/linux/openssh_sha1_cleaner.py">openssh_sha1_cleaner.py</a> (<a href="docs/linux/openssh_sha1_cleaner.md">usage</a>) 
-│   ├── ...
+│   ├── <a href="/scripting/linux/openssh_sha1_cleaner.py">openssh sha1 cleaner</a> (<a href="docs/linux/openssh_sha1_cleaner.md">usage</a>) 
+│   ├── <a href="/scripting/linux/webserver_harden.sh">webserver hardener</a> (<a href="docs/linux/webserver_harden.md">usage</a>) 
 │   └── ...
 ├── windows/
 │   ├── ...
