@@ -41,7 +41,7 @@ This script implements:
 - Safe defaults with audit capability
 
 ## 🚀 How to Use
-```bash 
+``` 
 sudo ./webserver_harden.sh
 ```
 - Run as root or with sudo
