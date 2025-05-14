@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# For detailed usage instructions, see: https://github.com/dovukans/coding/blob/main/docs/linux/openssh_sha1_cleaner.md
 
 import re
 import os

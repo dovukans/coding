@@ -1,3 +1,6 @@
+# For detailed usage instructions, see: https://github.com/dovukans/coding/blob/main/docs/windows/ad-ou-explorer.md
+
+
 # Ensure ActiveDirectory module is imported
 Import-Module ActiveDirectory -ErrorAction Stop
 

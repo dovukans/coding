@@ -1,6 +1,7 @@
 #!/bin/bash
 # RHEL Web Server Security Hardening Script
 # Usage: sudo ./webserver_harden.sh
+# For detailed usage instructions, see: https://github.com/dovukans/coding/blob/main/docs/linux/webserver_harden.md
 
 # ---[ STRICT MODE ]---
 set -euo pipefail
