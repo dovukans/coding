@@ -1,4 +1,4 @@
-# 🔍 AD Object Lister 
+#  AD Object Explorer 
 This PowerShell script allows administrators to interactively list and export Active Directory users, groups, or computers from a selected Organizational Unit (OU). It supports recursive searches, clear tabular output, and CSV export.
 
 >📄 **Index**
