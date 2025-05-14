@@ -37,7 +37,7 @@ This PowerShell script allows administrators to interactively list and export Ac
 
 2- Run the script:
 ``` 
-    .\AD-ObjectLister.ps1
+    .\ad-ou-explorer.ps1
 ```
 3- Follow the prompts:
 
