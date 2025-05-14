@@ -4,7 +4,7 @@ A robust Bash script to audit and harden common Linux web servers (Apache, Nginx
 
 >📄 **Index**
 > - [webserver_harden.sh](../../scripting/linux/webserver_harden.sh) – Main hardening script
-> - [README.md](./README.md) – You're here
+> - [README.md](./webserver_harden.md) – You're here
 
 ## ✨ Features
 - Automatic detection – Identifies running web servers (Apache/Nginx/Lighttpd)
