@@ -3,7 +3,7 @@ This PowerShell script allows administrators to interactively list and export Ac
 
 >📄 **Index**
 > - [ad-ou-explorer.ps1](../../scripting/windows/ad-ou-explorer.ps1) – Main script
-> - [README.md](./README.md) – You're here
+> - [README.md](./ad-ou-explorer.md) – You're here
 
 
 ## 🧰 Features
