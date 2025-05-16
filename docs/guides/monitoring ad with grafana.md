@@ -192,7 +192,7 @@ You’ve now successfully set up a complete monitoring stack for your Windows Ac
 
 - Windows Exporter for exposing Windows system metrics
 
-- Prometheus server is scraping metrics from the AD machine on port 9182, and Grafana is visualizing those metrics in real time.
+- Prometheus server is scraping metrics from the AD and Grafana is visualizing those metrics in real time.
 
 From here, you can:
 
@@ -202,4 +202,4 @@ From here, you can:
 
 - Monitor additional Windows servers by installing Windows Exporter on them and updating your Prometheus config
 
-Thanks for reading the guide! If it helped you, feel free to ⭐ the repo or share it with a teammate.
+Thanks for reading the guide! If it helped you feel free to ⭐ the repo or share it with a teammate.
