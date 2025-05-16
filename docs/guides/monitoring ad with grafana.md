@@ -1,4 +1,4 @@
- <a href="/coding/README.md">← Back to home page</a>
+ <a href="/README.md">← Back to home page</a>
 
 # Monitoring Active Directory with Grafana, Prometheus, and Windows Exporter
 
