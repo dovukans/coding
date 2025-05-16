@@ -1,3 +1,5 @@
+##### <a href="/README.md">← Back to home page</a> 
+ 
  # OpenSSH SHA1 Cleaner 
 
 A tiny but powerful script to automatically remove SHA1-based algorithms from OpenSSH crypto policy configs.

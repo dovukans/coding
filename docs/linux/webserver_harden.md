@@ -1,3 +1,5 @@
+##### <a href="/README.md">← Back to home page</a>
+
 # RHEL Web Server Security Hardening Script 
 
 A robust Bash script to audit and harden common Linux web servers (Apache, Nginx, Lighttpd) with secure defaults and security headers.
