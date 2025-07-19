@@ -28,7 +28,7 @@ This repo contains small, purpose-built Bash, Python and PowerShell scripts that
 ## 💡 Why I made this
 
 As a sysadmin, I found myself repeating the same manual configuration edits across different Linux distros and Windows servers.
-So instead of fixing the same 10 things on 10 servers, I decided to script once, apply many — and share what I use.
+So instead of fixing the same 10 things on 10 servers, I decided to script once and share what I use.
 
 These are the scripts I actually use in production environments.
 

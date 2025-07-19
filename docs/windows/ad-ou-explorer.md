@@ -25,7 +25,7 @@ This PowerShell script allows administrators to interactively list and export Ac
 
 
 
-- No risk of accidental actions — read-only queries.
+- No risk of accidental actions, read-only queries.
 
 ## ⚙️ Requirements
 - PowerShell 5.1 or higher
