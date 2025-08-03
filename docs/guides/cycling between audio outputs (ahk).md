@@ -20,7 +20,7 @@ After installation process, we can get started.
 
 ## 2. About NirCmd
 
-NirCmd is a portable app, this means there is no installation at all so you need to manually copy it somewhere after unzipping it.
+NirCmd is a portable app, so there’s no installer. After unzipping it, you’ll need to manually copy it wherever you want.
 
 
 ## 3. Renaming Audio Devices
