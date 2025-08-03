@@ -2,7 +2,7 @@
 
  # Cycling Between Audio Outputs - AutoHotKey Script
 
- In this guide we will create an AHK script that cycles between two audio sources (headset and speakers) with a single click. For convenience, we will place this button in the systray.
+ In this guide we will create an AHK script that cycles between two audio outputs (headset and speakers) with a single click. For convenience, we will place this button in the systray.
 
  ## 1. Prerequisites
 
