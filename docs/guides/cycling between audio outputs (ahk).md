@@ -118,7 +118,7 @@ We can configure this script to start after logging on.
  ```
 "C:\Program Files\AutoHotkey\v2\AutoHotkey64.exe" "D:\nircmd\AudioSwitcher.ahk"
  ```
- - Change the shortcut name of your liking, press finish.
+ - Enter a name for the shortcut, then press Finish.
 
  Now our icon should appear in the system tray whenever we log on to pc.
 
