@@ -125,6 +125,6 @@ We can configure this script to start after logging on.
 
  ## Supported Platforms
  Tested on:
- - Windows 11 24H2
+ - Windows 11 24H2 (build 26100.4770)
  - AutoHotKey v2 (ver 2.0.19)
  - NirCmd  (ver 2.87)
