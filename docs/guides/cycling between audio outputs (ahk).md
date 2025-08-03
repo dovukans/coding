@@ -25,7 +25,7 @@ NirCmd is a portable app, this means there is no installation at all so you need
 
 ## 3. Renaming Audio Devices
 
-If you have a monitor with speakers or any other device capable of outputitng sound, Windows may label them all as "Speaker" which may lead to confusion. To prevent this, we should rename our audio devices.
+If you have a monitor with speakers or any other device capable of outputting sound, Windows may label them all as "Speaker" which may lead to confusion. To prevent this, we should rename our audio devices.
 
 - Press Win+R and open mmsys.cpl,
 
