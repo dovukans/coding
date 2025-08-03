@@ -94,8 +94,8 @@ I named my script as AudioSwitcher, your folder should look like this:
 
 
 > [!TIP]
-> You can change the systray icon of this app, copy .ico file into the same folder and rename it as audio.ico
- You can use .png or other image files as well, but you need to convert them to ico first. You can use online ico converter tools.
+> You can change the systray icon of this app. Copy .ico file into the same folder and rename it as "audio.ico".
+You can use .png or other image files as well, but you need to convert them to ico first. You can use online ico converter tools, changing extensions by renaming may not work.
 
 
  > After running the script you should be able to see the icon in your systray. 
