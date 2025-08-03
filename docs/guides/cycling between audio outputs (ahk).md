@@ -25,7 +25,7 @@ NirCmd is a portable app, this means there is no installation at all so you need
 
 ## 3. Renaming Audio Devices
 
-If you have a monitor with speakers or any other device capable of outputting sound, Windows may label them all as "Speaker" which may lead to confusion. To prevent this, we should rename our audio devices.
+If you have a monitor with speakers or any other device capable of outputting sound, Windows may label them all as "Speakers" which may lead to confusion. To prevent this, we should rename our audio devices.
 
 - Press Win+R and open mmsys.cpl,
 
@@ -35,7 +35,7 @@ If you have a monitor with speakers or any other device capable of outputting so
 
 ## 4. AutoHotKey Script
 
-Here is our ahk script. Go to NirCmd directory and create a text file there. Then copy these inside and rename your file with your desired name and .ahk extension.
+Here is our ahk script. Go to NirCmd directory and create a text file there. Then copy these inside and rename your file with your desired name. Change the ".txt" entension to ".ahk".
  ```
 #Requires AutoHotkey v2.0
 #SingleInstance Force
