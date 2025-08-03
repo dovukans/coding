@@ -1,4 +1,4 @@
-# 🧰 Sysadmin Script Toolbox
+# 🧰 Script Toolbox
 
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnu-bash&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-0078D7?logo=powershell&logoColor=white)
