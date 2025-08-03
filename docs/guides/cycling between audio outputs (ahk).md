@@ -28,6 +28,7 @@ NirCmd is a portable app, so there’s no installer. After unzipping it, you’l
 If you have a monitor with speakers or any other device capable of outputting sound, Windows may label them all as "Speakers" which may lead to confusion. To prevent this, we should rename our audio devices.
 
 - Press Win+R and open mmsys.cpl,
+- Double click on your audio device,
 
 - Above the "Change Icon" button you can see the device name, simply rename these for both of your headset and speakers. I renamed my devices as "Nari" and "X530".
 
