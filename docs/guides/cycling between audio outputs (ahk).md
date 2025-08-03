@@ -80,7 +80,8 @@ Return
  ```
 
 
-
+> [!IMPORTANT]
+> Modify "**Nari**" and "**X530**" in the script to match your audio device names (as you changed in mmsys.cpl).
 
 
 
