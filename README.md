@@ -47,7 +47,7 @@ These are the scripts I actually use in production environments.
 
 guides/
 │   ├── <a href="docs/guides/monitoring ad with grafana.md">monitoring active directory with grafana</a></a>
-│   ├── <a href="docs/guides/cycling between audio outputs (ahk).md">cycling between audio outputs - an ahk script)</a></a>
+│   ├── <a href="docs/guides/cycling between audio outputs (ahk).md">cycling between audio outputs - an ahk script</a></a>
 │   └── ...
 
 
