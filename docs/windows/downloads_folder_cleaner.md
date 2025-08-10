@@ -53,3 +53,9 @@ This Python script moves files scattered across the Downloads folder into separa
 
 Our script runs daily at 12:20, moving files to their corresponding folders and then showing a toast notification. You can customize the folder-to-extension mappings in the script’s **extension_map** section.
 
+
+## Supported Platforms
+Tested on:
+- Windows 11 24H2 (build 26100.4770)
+- Python 3.13.5150
+- 
