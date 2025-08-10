@@ -8,8 +8,8 @@ This Python script moves files scattered across the Downloads folder into separa
 
 
 >📄 **Index**
-> - [downloads_folder_cleaner.py] (../../scripting/windows/downloads_folder_cleaner.py) – Main script
-> - [README.md] (./downloads_folder_cleaner.md) – You're here
+> - [downloads_folder_cleaner.py](../../scripting/windows/downloads_folder_cleaner.py) – Main script
+> - [README.md](downloads_folder_cleaner.py)  – You're here
 
 
 ## 1- Requirements
