@@ -3,7 +3,7 @@
 #  Downloads Folder Cleaner
 This Python script moves files scattered across the Downloads folder into separate folders based on their extensions. If a folder does not exist, it creates one. The script then shows a toast notification after moving the files.
 
-![pic6](/docs/guides/img%20sources/img06.PNG)
+![pic6](/docs/guides/img%20sources/img06.png)
 
 
 
@@ -33,11 +33,11 @@ This Python script moves files scattered across the Downloads folder into separa
 - In the Program/script field, enter the path to your **pythonw.exe**.
 - In the Add arguments field, enter **the full path to your script**. It should look like the image below.
 
- ![pic7](/docs/guides/img%20sources/img07.PNG)
+ ![pic7](/docs/guides/img%20sources/img07.png)
 
 - Press Next and Finish.
 
-![pic8](/docs/guides/img%20sources/img08.PNG)
+![pic8](/docs/guides/img%20sources/img08.png)
 
 > [!IMPORTANT]
 > Note: Even if you have installed reqiured libraries in your development environment, the script will fail unless they’re installed in the same Python environment that Windows will use to run the task (the python.exe or pythonw.exe specified in Task Scheduler). You’ll need to install: plyer, datetime, and pathlib. 
