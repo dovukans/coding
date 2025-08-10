@@ -123,7 +123,7 @@ We can configure this script to start after logging on.
 
  Now our icon should appear in the system tray whenever we log on to pc.
 
- ## Supported Platforms
+ ## 🖥 Supported Platforms
  Tested on:
  - Windows 11 24H2 (build 26100.4770)
  - AutoHotKey v2 (ver 2.0.19)
